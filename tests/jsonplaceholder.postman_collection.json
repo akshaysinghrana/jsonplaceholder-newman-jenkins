@@ -8,6 +8,24 @@
 	"item": [
 		{
 			"name": "https://jsonplaceholder.typicode.com/posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.value).to.eql(100);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -49,7 +67,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://jsonplaceholder.typicode.com//posts/1",
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
 					"protocol": "https",
 					"host": [
 						"jsonplaceholder",
@@ -57,7 +75,6 @@
 						"com"
 					],
 					"path": [
-						"",
 						"posts",
 						"1"
 					]
