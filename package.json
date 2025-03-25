@@ -2,7 +2,7 @@
   "name": "jsonplaceholder-newman-jenkins",
   "version": "1.0.0",
   "scripts": {
-    "execute-newman-tests": "newman run tests/jsonplaceholder.postman_collection.json -r cli,htmlextra —-reporter-htmlextra-export 'newman/report.html' --insecure"
+    "execute-newman-tests": "newman run collections/jsonplaceholder.postman_collection.json -r cli,htmlextra —-reporter-htmlextra-template reportTemplate/template.hbs 'newman/report.html' --insecure"
   },
   "author": "Akshay rana",
   "license": "ISC",
